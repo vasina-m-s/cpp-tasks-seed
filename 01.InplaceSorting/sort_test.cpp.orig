@@ -7,36 +7,31 @@
 
 // Пузырек
 
-TEST(BubbleSort, EmptyVector)
-{
+TEST(BubbleSort, EmptyVector) {
     std::vector<int> data;
     bubble_sort(data.begin(), data.end());
     EXPECT_TRUE(data.empty());
 }
 
-TEST(BubbleSort, SingleElement)
-{
+TEST(BubbleSort, SingleElement) {
     std::vector<int> data = {42};
     bubble_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));
 }
 
-TEST(BubbleSort, AlreadySorted)
-{
+TEST(BubbleSort, AlreadySorted) {
     std::vector<int> data = {-10, 0, 10, 20};
     bubble_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));
 }
 
-TEST(BubbleSort, ReverseSorted)
-{
+TEST(BubbleSort, ReverseSorted) {
     std::vector<int> data = {20, 10, 0, -10};
     bubble_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));
 }
 
-TEST(BubbleSort, RepeatedElements)
-{
+TEST(BubbleSort, RepeatedElements) {
     std::vector<int> data = {5, 3, 5, 2, 3, -1};
     bubble_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));
@@ -44,36 +39,31 @@ TEST(BubbleSort, RepeatedElements)
 
 // Быстрая сортировка
 
-TEST(QuickSort, EmptyVector)
-{
+TEST(QuickSort, EmptyVector) {
     std::vector<int> data;
     quick_sort(data.begin(), data.end());
     EXPECT_TRUE(data.empty());
 }
 
-TEST(QuickSort, SingleElement)
-{
+TEST(QuickSort, SingleElement) {
     std::vector<int> data = {42};
     quick_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));
 }
 
-TEST(QuickSort, AlreadySorted)
-{
+TEST(QuickSort, AlreadySorted) {
     std::vector<int> data = {-10, 0, 10, 20};
     quick_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));
 }
 
-TEST(QuickSort, ReverseSorted)
-{
+TEST(QuickSort, ReverseSorted) {
     std::vector<int> data = {20, 10, 0, -10};
     quick_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));
 }
 
-TEST(QuickSort, RepeatedElements)
-{
+TEST(QuickSort, RepeatedElements) {
     std::vector<int> data = {5, 3, 5, 2, 3, -1};
     quick_sort(data.begin(), data.end());
     EXPECT_TRUE(std::is_sorted(data.begin(), data.end()));

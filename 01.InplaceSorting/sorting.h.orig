@@ -8,18 +8,14 @@
 
 // ----------------------------- Пузырёк (например) --------------------------------------
 template <typename Iterator>
-void bubble_sort(Iterator begin, Iterator end)
-{
+void bubble_sort(Iterator begin, Iterator end) {
     if (begin == end) return;
 
     bool swapped;
-    for (auto last = end; last != begin; --last)
-    {
+    for (auto last = end; last != begin; --last) {
         swapped = false;
-        for (auto it = begin; it != last - 1; ++it)
-        {
-            if (*(it+1) < *it)
-            {
+        for (auto it = begin; it != last - 1; ++it) {
+            if (*(it+1) < *it) {
                 std::swap(*it, *(it+1));
                 swapped = true;
             }
@@ -31,8 +27,7 @@ void bubble_sort(Iterator begin, Iterator end)
 
 // --------------------------- QuickSort (например) ---------------------------------------
 template <typename Iterator>
-void quick_sort(Iterator begin, Iterator end)
-{
+void quick_sort(Iterator begin, Iterator end) {
     if (end - begin <= 1) return;
 
     Iterator pivot = begin + (end - begin) / 2;
@@ -41,10 +36,8 @@ void quick_sort(Iterator begin, Iterator end)
 
     Iterator left = begin;
 
-    for (Iterator right = begin; right != pivot; ++right)
-    {
-        if (*right < *pivot)
-        {
+    for (Iterator right = begin; right != pivot; ++right) {
+        if (*right < *pivot) {
             std::swap(*left, *right);
             ++left;
         }
