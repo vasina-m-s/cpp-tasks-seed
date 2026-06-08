@@ -15,13 +15,13 @@ A,B,C
 1,-3,-1
 EOF
 
-cat <<EOF > expected_output.csv
+cat <<EOF > .itest/expected.csv
 x
-2
-1
+2.000000
+1.000000
 EOF
 
-./debug .itest/input.csv > .itest/output.csv
+./gauss .itest/input.csv > .itest/output.csv
 
 if cmp -s .itest/expected.csv .itest/output.csv; then
     echo "Integration test passed"

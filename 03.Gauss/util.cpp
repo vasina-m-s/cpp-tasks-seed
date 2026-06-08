@@ -72,13 +72,13 @@ GaussMatrix load_csv_to_matrix(const char *filename)
 
 
 
-void print_matrix_as_csv(std::ostream& out, const GaussVector& matrix, int prec)
+void print_matrix_as_csv(std::ostream& out, const GaussVector& x, int prec)
 {
-    out << "matrix\n";
+    out << "x\n";
     out << std::fixed << std::setprecision(prec);
 
-    for (Eigen::Index i = 0; i < matrix.size(); ++i)
+    for (Eigen::Index i = 0; i < x.size(); ++i)
     {
-        out << matrix(i) << '\n';
+        out << x(i) << '\n';
     }
 }
